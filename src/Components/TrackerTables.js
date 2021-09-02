@@ -1,7 +1,26 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Grid, Segment, Header } from 'semantic-ui-react'
 
 const TrackerTables = () => {
+
+    const [squat, setSquat] = useState ("")
+
+    const onSubmitSquat = async entry => {
+      entry.preventDefault();
+      try {
+          const body = {squat}
+          const response = await fetch ("http://localhost:5000/newsquat", {
+              method: "POST",
+              headers: { "Content-Type": "application/json"},
+              body: JSON.stringify(body)
+          });
+
+          console.log(response)
+      } catch (error){
+          console.error(error.message)
+
+      }
+      }
 
     const style = {
         h1: {
@@ -55,11 +74,13 @@ const TrackerTables = () => {
       </Grid.Column>
       <Grid.Column>
         <Segment>
-          <div class="ui fluid right labeled input">
-            <input type="text" placeholder="Enter new weight.."/>
+          <div class="ui fluid right labeled input" onSubmit={onSubmitSquat}>
+            <input type="text" placeholder="Enter new weight.."
+            onChange={entry => setSquat(entry.target.value)}/>
             <div class="ui basic label">
               kg
             </div>
+            <button class="ui button">Submit</button>
           </div>
         </Segment>
       </Grid.Column>
