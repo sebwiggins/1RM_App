@@ -4,8 +4,7 @@ import 'semantic-ui-css/semantic.min.css'
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import OneRmHome from "./Pages/1RMHomePage";
 import OneRmCalculator from "./Pages/1RMCalculatorPage";

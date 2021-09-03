@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Header } from 'semantic-ui-react'
-import { maxNinety, maxEighty, maxSeventy, maxSixty, maxFifty, maxForty, maxThirty } from './HelperFunctions'
 
 const CalculatorTables = () => {
+
+  const [maxValue, setMaxValue] = useState (0)
+
 
     const style = {
         h1: {
@@ -20,15 +22,20 @@ const CalculatorTables = () => {
         },
       }
 
+      const maxPercentage = (max, percentage) => {
+        return parseInt(max * percentage)
+    }
+
 
     return (
         <div>
         <Header as='h3' content='% of 1RM Calculator' style={style.h3} textAlign='center' />
     <div class="ui right labeled input">
-        <input type="text" placeholder="Enter weight.."/>
+        <input type="text" placeholder="Enter weight.." onChange={(event) => setMaxValue(event.target.value)}/>
         <div class="ui basic label">
     kg
     </div>
+    <button class="ui button">Submit</button>
     </div>
     <Header as='h3' content='% of Max' style={style.h3} textAlign='center' />
     
@@ -40,31 +47,31 @@ const CalculatorTables = () => {
     <tbody>
       <tr>
         <td data-label="Name">90%</td>
-        <td data-label="Age">{maxNinety}</td>
+        <td data-label="Age">{maxPercentage(maxValue, 0.9)}</td>
       </tr>
       <tr>
         <td data-label="Name">80%</td>
-        <td data-label="Age">{maxEighty}</td>
+        <td data-label="Age">{maxPercentage(maxValue, 0.8)}</td>
       </tr>
       <tr>
         <td data-label="Name">70%</td>
-        <td data-label="Age">{maxSeventy}</td>
+        <td data-label="Age">{maxPercentage(maxValue, 0.7)}</td>
       </tr>
       <tr>
         <td data-label="Name">60%</td>
-        <td data-label="Age">{maxSixty}</td>
+        <td data-label="Age">{maxPercentage(maxValue, 0.7)}</td>
       </tr>
       <tr>
         <td data-label="Name">50%</td>
-        <td data-label="Age">{maxFifty}</td>
+        <td data-label="Age">{maxPercentage(maxValue, 0.5)}</td>
       </tr>
       <tr>
         <td data-label="Name">40%</td>
-        <td data-label="Age">{maxForty}</td>
+        <td data-label="Age">{maxPercentage(maxValue, 0.4)}</td>
       </tr>
       <tr>
         <td data-label="Name">30%</td>
-        <td data-label="Age">{maxThirty}</td>
+        <td data-label="Age">{maxPercentage(maxValue, 0.3)}</td>
       </tr>
     </tbody>
   </table>
