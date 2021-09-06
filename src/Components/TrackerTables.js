@@ -15,7 +15,7 @@ const TrackerTables = () => {
       entry.preventDefault();
       try {
           const body = {squat}
-          const response = await fetch ("http://localhost:4000/newsquat", {
+          const response = await fetch (`${process.env.REACT_APP_APILOCATION}/newsquat`, {
               method: "POST",
               headers: { "Content-Type": "application/json"},
               body: JSON.stringify(body)
@@ -32,7 +32,7 @@ const TrackerTables = () => {
         entry.preventDefault();
         try {
             const body = {deadlift}
-            const response = await fetch ("http://localhost:4000/newdeadlift", {
+            const response = await fetch (`${process.env.REACT_APP_APILOCATION}/newdeadlift`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json"},
                 body: JSON.stringify(body)
@@ -49,7 +49,7 @@ const TrackerTables = () => {
           entry.preventDefault();
           try {
               const body = {bench}
-              const response = await fetch ("http://localhost:4000/newbench", {
+              const response = await fetch (`${process.env.REACT_APP_APILOCATION}/newbench`, {
                   method: "POST",
                   headers: { "Content-Type": "application/json"},
                   body: JSON.stringify(body)
@@ -76,7 +76,7 @@ const TrackerTables = () => {
 
         const getDeadliftValue = async () => {
           try {
-              const response = await fetch ("http://localhost:4000/deadlift")
+              const response = await fetch (`${process.env.REACT_APP_APILOCATION}/deadlift`)
               const jsonData = await response.json()
               console.log(jsonData)
   
@@ -88,7 +88,7 @@ const TrackerTables = () => {
 
       const getBenchValue = async () => {
         try {
-            const response = await fetch ("http://localhost:4000/bench")
+            const response = await fetch (`${process.env.REACT_APP_APILOCATION}/bench`)
             const jsonData = await response.json()
             console.log(jsonData)
 
