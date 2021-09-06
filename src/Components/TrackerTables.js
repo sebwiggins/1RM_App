@@ -64,7 +64,7 @@ const TrackerTables = () => {
 
           const getSquatValue = async () => {
             try {
-                const response = await fetch ("http://localhost:4000/squat")
+                const response = await fetch (`${process.env.REACT_APP_APILOCATION}/squat`)
                 const jsonData = await response.json()
                 console.log(jsonData)
     
