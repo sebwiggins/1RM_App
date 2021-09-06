@@ -15,7 +15,7 @@ const TrackerTables = () => {
       entry.preventDefault();
       try {
           const body = {squat}
-          const response = await fetch ("http://localhost:5000/newsquat", {
+          const response = await fetch ("http://localhost:4000/newsquat", {
               method: "POST",
               headers: { "Content-Type": "application/json"},
               body: JSON.stringify(body)
@@ -32,7 +32,7 @@ const TrackerTables = () => {
         entry.preventDefault();
         try {
             const body = {deadlift}
-            const response = await fetch ("http://localhost:5000/newdeadlift", {
+            const response = await fetch ("http://localhost:4000/newdeadlift", {
                 method: "POST",
                 headers: { "Content-Type": "application/json"},
                 body: JSON.stringify(body)
@@ -49,7 +49,7 @@ const TrackerTables = () => {
           entry.preventDefault();
           try {
               const body = {bench}
-              const response = await fetch ("http://localhost:5000/newbench", {
+              const response = await fetch ("http://localhost:4000/newbench", {
                   method: "POST",
                   headers: { "Content-Type": "application/json"},
                   body: JSON.stringify(body)
@@ -64,7 +64,7 @@ const TrackerTables = () => {
 
           const getSquatValue = async () => {
             try {
-                const response = await fetch ("http://localhost:5000/squat")
+                const response = await fetch ("http://localhost:4000/squat")
                 const jsonData = await response.json()
                 console.log(jsonData)
     
@@ -76,7 +76,7 @@ const TrackerTables = () => {
 
         const getDeadliftValue = async () => {
           try {
-              const response = await fetch ("http://localhost:5000/deadlift")
+              const response = await fetch ("http://localhost:4000/deadlift")
               const jsonData = await response.json()
               console.log(jsonData)
   
@@ -88,7 +88,7 @@ const TrackerTables = () => {
 
       const getBenchValue = async () => {
         try {
-            const response = await fetch ("http://localhost:5000/bench")
+            const response = await fetch ("http://localhost:4000/bench")
             const jsonData = await response.json()
             console.log(jsonData)
 
@@ -103,14 +103,6 @@ const TrackerTables = () => {
           getDeadliftValue();
           getBenchValue();
       }, [])
-
-  //     useEffect(() =>{
-  //       getDeadliftValue();
-  //   }, [])
-
-  //   useEffect(() =>{
-  //     getBenchValue();
-  // }, [])
 
             if (squatTableElement.length === 0){
         return "loading"

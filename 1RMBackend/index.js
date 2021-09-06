@@ -15,7 +15,6 @@ app.post("/newsquat", async (req, res) => {
     try {
       const { squat } = req.body
     console.log({squat})
-    console.log("i updated")
     const dbres = await pool.query("update onerm set squat = $1 WHERE username = 'sebwiggins'", [squat]);
     res.json(dbres.rows);
     } catch (error) {
