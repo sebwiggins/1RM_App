@@ -59,7 +59,7 @@ const CalculatorTables = () => {
       </tr>
       <tr>
         <td data-label="Name">60%</td>
-        <td data-label="Age">{maxPercentage(maxValue, 0.7)}</td>
+        <td data-label="Age">{maxPercentage(maxValue, 0.6)}</td>
       </tr>
       <tr>
         <td data-label="Name">50%</td>
