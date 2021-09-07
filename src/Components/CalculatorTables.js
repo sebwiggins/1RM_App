@@ -35,7 +35,6 @@ const CalculatorTables = () => {
         <div class="ui basic label">
     kg
     </div>
-    <button class="ui button">Submit</button>
     </div>
     <Header as='h3' content='% of Max' style={style.h3} textAlign='center' />
     
