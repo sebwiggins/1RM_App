@@ -20,7 +20,7 @@ const TrackerTables = () => {
               headers: { "Content-Type": "application/json"},
               body: JSON.stringify(body)
           });
-
+          window.location.reload()
           console.log(response)
       } catch (error){
           console.error(error.message)
@@ -37,7 +37,7 @@ const TrackerTables = () => {
                 headers: { "Content-Type": "application/json"},
                 body: JSON.stringify(body)
             });
-  
+            window.location.reload()
             console.log(response)
         } catch (error){
             console.error(error.message)
@@ -54,7 +54,7 @@ const TrackerTables = () => {
                   headers: { "Content-Type": "application/json"},
                   body: JSON.stringify(body)
               });
-    
+              window.location.reload()
               console.log(response)
           } catch (error){
               console.error(error.message)
