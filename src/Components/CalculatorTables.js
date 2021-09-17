@@ -26,6 +26,7 @@ const CalculatorTables = () => {
         return parseInt(max * percentage)
     }
 
+     const numArray = [0.95, 0.9, 0.85, 0.8, 0.75, 0.7, 0.65, 0.6, 0.55, 0.5, 0.4, 0.3]
 
     return (
         <div>
@@ -38,40 +39,58 @@ const CalculatorTables = () => {
     </div>
     <Header as='h3' content='% of Max' style={style.h3} textAlign='center' />
     
-    <table class="ui celled table">
+    {/* <table class="ui celled table">
     <thead>
       <tr><th>% of Max</th>
       <th>Weight</th>
     </tr></thead>
     <tbody>
       <tr>
-        <td data-label="Name">90%</td>
-        <td data-label="Age">{maxPercentage(maxValue, 0.9)}</td>
+        <td >90%</td>
+        <td>{maxPercentage(maxValue, 0.9)}</td>
       </tr>
       <tr>
-        <td data-label="Name">80%</td>
-        <td data-label="Age">{maxPercentage(maxValue, 0.8)}</td>
+        <td>80%</td>
+        <td>{maxPercentage(maxValue, 0.8)}</td>
       </tr>
       <tr>
-        <td data-label="Name">70%</td>
-        <td data-label="Age">{maxPercentage(maxValue, 0.7)}</td>
+        <td>70%</td>
+        <td>{maxPercentage(maxValue, 0.7)}</td>
       </tr>
       <tr>
-        <td data-label="Name">60%</td>
-        <td data-label="Age">{maxPercentage(maxValue, 0.6)}</td>
+        <td>60%</td>
+        <td>{maxPercentage(maxValue, 0.6)}</td>
       </tr>
       <tr>
-        <td data-label="Name">50%</td>
-        <td data-label="Age">{maxPercentage(maxValue, 0.5)}</td>
+        <td>50%</td>
+        <td>{maxPercentage(maxValue, 0.5)}</td>
       </tr>
       <tr>
-        <td data-label="Name">40%</td>
-        <td data-label="Age">{maxPercentage(maxValue, 0.4)}</td>
+        <td>40%</td>
+        <td>{maxPercentage(maxValue, 0.4)}</td>
       </tr>
       <tr>
-        <td data-label="Name">30%</td>
-        <td data-label="Age">{maxPercentage(maxValue, 0.3)}</td>
+        <td>30%</td>
+        <td>{maxPercentage(maxValue, 0.3)}</td>
       </tr>
+    </tbody>
+  </table> */}
+  <table class="ui celled table">
+    <thead>
+      <tr>
+        <th>%</th>
+        <th>Weight</th>
+      </tr>
+    </thead>
+    <tbody>
+      {numArray.map(num => {
+        return (
+          <tr>
+            <td>{parseInt(num * 100) + "%"}</td>
+            <td>{maxPercentage(maxValue, num) + "kg"}</td>
+          </tr>
+        )
+      })}
     </tbody>
   </table>
   </div>
